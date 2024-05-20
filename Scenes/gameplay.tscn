@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq7p3jl1uywx4"]
+
+[ext_resource type="PackedScene" uid="uid://ckn01qdcue5oy" path="res://Scenes/head.tscn" id="1_3mgc7"]
+[ext_resource type="Script" path="res://Scripts/Gameplay.gd" id="1_8nxrx"]
+[ext_resource type="Script" path="res://Scripts/Bounds.gd" id="3_ylfqk"]
+
+[node name="Gameplay" type="Node2D"]
+script = ExtResource("1_8nxrx")
+
+[node name="Head" parent="." instance=ExtResource("1_3mgc7")]
+position = Vector2(256, 128)
+
+[node name="Bounds" type="Node" parent="."]
+script = ExtResource("3_ylfqk")
+
+[node name="UpperLeft" type="Marker2D" parent="Bounds"]
+
+[node name="LowerRight" type="Marker2D" parent="Bounds"]
+position = Vector2(960, 480)
