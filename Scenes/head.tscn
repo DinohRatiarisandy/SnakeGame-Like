@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckn01qdcue5oy"]
+
+[ext_resource type="Script" path="res://Scripts/Head.gd" id="1_1lenv"]
+[ext_resource type="Texture2D" uid="uid://cdjkt6wcteqk6" path="res://Assets/Sprites/head-dw-logo.png" id="1_u73b7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5kr8d"]
+radius = 16.0
+
+[node name="Head" type="Area2D"]
+script = ExtResource("1_1lenv")
+
+[node name="HeadSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_u73b7")
+
+[node name="HeadCollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5kr8d")
