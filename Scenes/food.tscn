@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmftn0avp4kn"]
+
+[ext_resource type="Texture2D" uid="uid://dchngxnq5mbyn" path="res://Assets/Sprites/star-food.png" id="1_qde1b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d5l3k"]
+radius = 11.0
+
+[node name="Food" type="Area2D" groups=["food"]]
+collision_mask = 2
+
+[node name="FoodSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_qde1b")
+
+[node name="FoodCollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_d5l3k")
