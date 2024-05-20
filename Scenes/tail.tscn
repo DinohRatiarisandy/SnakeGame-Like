@@ -1,0 +1,25 @@
+[gd_scene load_steps=9 format=3 uid="uid://un25ekg5m0kg"]
+
+[ext_resource type="Script" path="res://Scripts/Tail.gd" id="1_yl2ag"]
+[ext_resource type="Texture2D" uid="uid://d2t2y03007lyf" path="res://Assets/Sprites/apple.png" id="2_m4i1f"]
+[ext_resource type="Texture2D" uid="uid://dg5tnhjjc26vk" path="res://Assets/Sprites/bread.png" id="3_1w6qg"]
+[ext_resource type="Texture2D" uid="uid://bqokgc11awpo3" path="res://Assets/Sprites/broccoli.png" id="4_4ebwo"]
+[ext_resource type="Texture2D" uid="uid://b4hoy4eipp72" path="res://Assets/Sprites/coconut.png" id="5_vy3ed"]
+[ext_resource type="Texture2D" uid="uid://df765nq76q6k" path="res://Assets/Sprites/milk.png" id="6_diccd"]
+[ext_resource type="Texture2D" uid="uid://borii0ykc2da4" path="res://Assets/Sprites/orange.png" id="7_fj8my"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bv7x3"]
+radius = 11.0
+
+[node name="Tail" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_yl2ag")
+textures = Array[Texture]([ExtResource("2_m4i1f"), ExtResource("3_1w6qg"), ExtResource("4_4ebwo"), ExtResource("5_vy3ed"), ExtResource("6_diccd"), ExtResource("7_fj8my")])
+
+[node name="TailSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_m4i1f")
+
+[node name="TailCollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_bv7x3")
