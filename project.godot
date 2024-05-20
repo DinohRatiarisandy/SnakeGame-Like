@@ -59,6 +59,12 @@ move_down={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="food"
+2d_physics/layer_2="head"
+2d_physics/layer_3="tail"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
