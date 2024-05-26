@@ -12,7 +12,7 @@ const GAMEPLAY_SCN: PackedScene = preload("res://Scenes/gameplay.tscn")
 
 
 func _ready() -> void:
-	var high_score: int = 0
+	var high_score: int = Global.save_data.high_score
 	high_score_label.text = "High Score: " + str(high_score)
 
 

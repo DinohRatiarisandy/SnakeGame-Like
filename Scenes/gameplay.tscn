@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cq7p3jl1uywx4"]
+[gd_scene load_steps=9 format=3 uid="uid://cq7p3jl1uywx4"]
 
 [ext_resource type="PackedScene" uid="uid://ckn01qdcue5oy" path="res://Scenes/head.tscn" id="1_3mgc7"]
 [ext_resource type="Script" path="res://Scripts/Gameplay.gd" id="1_8nxrx"]
 [ext_resource type="Texture2D" uid="uid://x4wbmocrhv5d" path="res://Assets/Sprites/grid.png" id="2_pmtv3"]
 [ext_resource type="Script" path="res://Scripts/Bounds.gd" id="3_ylfqk"]
 [ext_resource type="Script" path="res://Scripts/Spawner.gd" id="5_p6xyx"]
+[ext_resource type="PackedScene" uid="uid://bgeqskoil6qy1" path="res://Scenes/hud.tscn" id="6_epghi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kwqj5"]
 texture = ExtResource("2_pmtv3")
@@ -30,6 +31,7 @@ position = Vector2(256, 128)
 script = ExtResource("3_ylfqk")
 
 [node name="UpperLeft" type="Marker2D" parent="Bounds"]
+position = Vector2(0, 32)
 
 [node name="LowerRight" type="Marker2D" parent="Bounds"]
 position = Vector2(960, 480)
@@ -43,3 +45,5 @@ unique_name_in_owner = true
 
 [node name="SnakeParts" type="Node" parent="."]
 unique_name_in_owner = true
+
+[node name="HUD" parent="." instance=ExtResource("6_epghi")]

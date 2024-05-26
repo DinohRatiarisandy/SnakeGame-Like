@@ -1,17 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://c42uuiy2bgbps"]
+[gd_scene load_steps=3 format=3 uid="uid://c42uuiy2bgbps"]
 
 [ext_resource type="Script" path="res://Scripts/StartScreen.gd" id="1_aunbf"]
+[ext_resource type="Theme" uid="uid://c66y07v1d3gux" path="res://Data/button_style.tres" id="2_vh3qm"]
 
 [node name="StartScreen" type="CanvasLayer"]
 script = ExtResource("1_aunbf")
 
-[node name="Panel" type="Panel" parent="."]
-modulate = Color(1, 1, 1, 0.8)
+[node name="Panel" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.30949, 0.19154, 0.11225, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -38,8 +39,8 @@ text = "SNAKE GAME"
 [node name="HighScoreLabel" type="Label" parent="Panel/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0.754301, 0, 1)
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0, 0.784314, 0, 1)
+theme_override_font_sizes/font_size = 24
 text = "High Score: 0"
 horizontal_alignment = 1
 
@@ -55,15 +56,17 @@ columns = 2
 
 [node name="StartButton" type="Button" parent="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(150, 40)
 layout_mode = 2
+theme = ExtResource("2_vh3qm")
 text = "Start"
 
 [node name="QuitButton" type="Button" parent="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+theme = ExtResource("2_vh3qm")
 text = "Quit"
 
-[connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="button_up" from="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="button_up" from="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer/QuitButton" to="." method="_on_quit_button_pressed"]

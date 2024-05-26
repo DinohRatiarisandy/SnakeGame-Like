@@ -10,9 +10,12 @@ class_name Gameover extends CanvasLayer
 @onready var high_score_label: Label = %HighScoreLabel
 
 
-func set_score(n: int) -> void:
-	score_label.text = "Score: " + str(n)
-	# TODO: high score logic and saving
+func set_score(score: int) -> void:
+	score_label.text = "Score: " + str(score)
+	if score > Global.save_data.high_score:
+		Global.save_data.high_score = score
+		Global.save_data.save()
+		high_score_label.visible = true
 
 
 func _notification(what: int) -> void:

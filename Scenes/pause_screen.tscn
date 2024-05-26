@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://db7sbieuxc0kf"]
+[gd_scene load_steps=3 format=3 uid="uid://db7sbieuxc0kf"]
 
 [ext_resource type="Script" path="res://Scripts/PauseScreen.gd" id="1_1uc1x"]
+[ext_resource type="Theme" uid="uid://c66y07v1d3gux" path="res://Data/button_style.tres" id="2_esmaw"]
 
 [node name="PauseScreen" type="CanvasLayer"]
 process_mode = 3
@@ -48,15 +49,17 @@ columns = 2
 
 [node name="ResumeButton" type="Button" parent="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(150, 40)
 layout_mode = 2
+theme = ExtResource("2_esmaw")
 text = "Resume"
 
 [node name="RestartButton" type="Button" parent="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(150, 40)
 layout_mode = 2
+theme = ExtResource("2_esmaw")
 text = "Restart"
 
-[connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="button_up" from="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="button_up" from="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer/RestartButton" to="." method="_on_restart_button_pressed"]

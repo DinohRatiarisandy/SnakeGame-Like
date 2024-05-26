@@ -1,13 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dixl5heuleq5d"]
+[gd_scene load_steps=3 format=3 uid="uid://dixl5heuleq5d"]
 
 [ext_resource type="Script" path="res://Scripts/Gameover.gd" id="1_3fc4f"]
+[ext_resource type="Theme" uid="uid://c66y07v1d3gux" path="res://Data/button_style.tres" id="2_wjf6h"]
 
 [node name="GameOver" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_3fc4f")
 
 [node name="Panel" type="Panel" parent="."]
-modulate = Color(1, 1, 1, 0.8)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -46,6 +46,7 @@ horizontal_alignment = 1
 
 [node name="HighScoreLabel" type="Label" parent="Panel/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.754301, 0, 1)
 theme_override_font_sizes/font_size = 18
@@ -64,15 +65,17 @@ columns = 2
 
 [node name="RestartButton" type="Button" parent="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(150, 40)
 layout_mode = 2
+theme = ExtResource("2_wjf6h")
 text = "Restart"
 
 [node name="QuitButton" type="Button" parent="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(150, 40)
 layout_mode = 2
+theme = ExtResource("2_wjf6h")
 text = "Quit"
 
-[connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="button_up" from="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer/QuitButton" to="." method="_on_quit_button_pressed"]
