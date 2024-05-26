@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Snake Game-like"
-run/main_scene="res://Scenes/gameplay.tscn"
+run/main_scene="res://Scenes/start_screen.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -31,6 +31,10 @@ project/assembly_name="Snake Game-like"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
+
+[filesystem]
+
+import/blender/enabled=false
 
 [input]
 
