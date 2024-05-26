@@ -1,5 +1,14 @@
 class_name Gameplay extends Node2D
 
+"""
+	This class is responsable of the main logic of the game.
+	- Spanw a new food
+	- Growing the snake
+	- Update the snake movement
+	- Is game over ?
+	- Is paused ?
+"""
+
 @onready var head: Head = $Head as Head
 @onready var bounds: Bounds = $Bounds as Bounds
 @onready var spawner: Spawner = $Spawner as Spawner
@@ -39,6 +48,9 @@ func _physics_process(delta: float) -> void:
 
 
 func update_snake() -> void:
+	"""
+		Update the snake direction
+	"""
 	var new_pos = head.position + move_dir * Global.GRID_SIZE
 	new_pos = bounds.wrap_vector(new_pos)
 	head.move_to(new_pos)
@@ -54,8 +66,14 @@ func _on_food_eaten() -> void:
 
 
 func _on_tail_added(tail: Tail) -> void:
+	"""
+		The snake grow
+	"""
 	snake_parts.append(tail)
 
 
 func _on_tail_eaten() -> void:
+	"""
+		Is Game over ?
+	"""
 	print("Game Over")
