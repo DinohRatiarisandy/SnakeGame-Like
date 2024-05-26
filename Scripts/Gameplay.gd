@@ -15,6 +15,7 @@ const PAUSE_SCN = preload("res://Scenes/pause_screen.tscn")
 @onready var head: Head = $Head as Head
 @onready var bounds: Bounds = $Bounds as Bounds
 @onready var spawner: Spawner = $Spawner as Spawner
+@onready var hud: HUD = $HUD as HUD
 
 var time_between_move := 1000.0
 var time_since_last_move := 0.0
@@ -23,7 +24,10 @@ var move_dir := Vector2.ZERO
 var snake_parts: Array[SnakePart] = []
 var gameover_menu: Gameover
 var pause_menu: PauseScn
-var score: int = 0
+var score: int = 0:
+	set(value):
+		score = value
+		hud.update_score(score)
 
 
 func _ready() -> void:

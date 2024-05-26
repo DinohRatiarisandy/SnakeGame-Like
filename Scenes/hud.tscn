@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgeqskoil6qy1"]
+
+[ext_resource type="Script" path="res://Scripts/hud.gd" id="1_huc8e"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_huc8e")
+
+[node name="Bg" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(0, 32)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+color = Color(0, 0.00392157, 0.054902, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 32)
+layout_direction = 3
+offset_left = 12.0
+offset_right = 460.0
+offset_bottom = 32.0
+size_flags_horizontal = 3
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="HighScoreInt" type="Label" parent="HBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.776471, 1, 0.513726, 1)
+text = "999643132"
+horizontal_alignment = 3
+vertical_alignment = 3
+
+[node name="HighScoreLabel" type="Label" parent="HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.776471, 1, 0.513726, 1)
+text = "High Score:"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="ScoreInt" type="Label" parent="HBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "999332313"
+horizontal_alignment = 3
+vertical_alignment = 3
+
+[node name="ScoreLabel" type="Label" parent="HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Score:"
